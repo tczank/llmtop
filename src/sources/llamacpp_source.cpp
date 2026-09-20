@@ -142,7 +142,7 @@ std::string gguf_general_name(const std::string& path) {
 std::string pretty_model_name(std::string name) {
   if (auto slash = name.find_last_of('/'); slash != std::string::npos)
     name = name.substr(slash + 1);
-  if (name.size() > 5 && name.ends_with(".gguf"))
+  if (name.size() > 5 && name.substr(name.size() - 5) == ".gguf")
     name.resize(name.size() - 5);
   if (name.rfind("sha256-", 0) == 0 && name.size() > 7 + 16)
     name = name.substr(0, 7 + 8) + "…";
