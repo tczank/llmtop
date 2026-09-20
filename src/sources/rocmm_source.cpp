@@ -28,9 +28,9 @@ constexpr std::uint32_t kRsmiMemTypeVram = 0;
 constexpr std::uint32_t kRsmiTempTypeEdge = 0;
 constexpr std::uint32_t kRsmiTempCurrent = 0;
 
-// rsmi_clk_type_t
+// rsmi_clk_type_t (rocm_smi.h): SYS=0, DF=1, DCEF=2, SOC=3, MEM=4, PCIE=5
 constexpr std::uint32_t kRsmiClkTypeSys = 0;
-constexpr std::uint32_t kRsmiClkTypeMem = 5;
+constexpr std::uint32_t kRsmiClkTypeMem = 4;
 
 template <typename Fn>
 bool resolve(void* lib, const char* name, Fn& fn) {
